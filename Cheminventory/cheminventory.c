@@ -54,7 +54,7 @@ static struct miscdevice cheminventory = {
     .minor      = 53,
     .name       = "cheminventory",
     .fops       = &fops,
-    .mode	    = 0666,
+    .mode	= 0666,
 };
 
 static int open_module (struct inode *inode, struct file *filp) {
@@ -63,9 +63,9 @@ static int open_module (struct inode *inode, struct file *filp) {
 
 static long ioctl_module (struct file *filp, unsigned int cmd, unsigned long arg) {
     struct req user_data;
-    struct chemical * chem = 0; 
-    struct chemical * entry = 0;
-    struct list_head * ptr = 0;
+    struct chemical  * chem  = 0;
+    struct chemical  * entry = 0;
+    struct list_head * ptr   = 0;
     void * note;
     char buf[1000]; 
     int ret = 0;
